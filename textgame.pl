@@ -2,8 +2,11 @@
 #HBPv.0.0.1
 
 use strict;
+#clears the screen to start the program
 my $clear_string = `clear`;
 print "$clear_string";
+#Asks the player about their stats :0
+
 print "\nYou have 10 stat points to spend:\n";
 print "Use them wisely.\n";
 print "INT=0,DEX=0,STR=0,LUK=0\n";
