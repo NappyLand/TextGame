@@ -1,4 +1,6 @@
 #!/bin/bash/perl -w
+#HBPv.0.0.1
+
 use strict;
 my $clear_string = `clear`;
 print "$clear_string";
@@ -6,7 +8,7 @@ print "\nYou have 10 stat points to spend:\n";
 print "Use them wisely.\n";
 print "INT=0,DEX=0,STR=0,LUK=0\n";
 #int, dex, str, luk, hp, mp
-my $intelligence; 
+my $intelligence;
 my $statRemaining = 10;
 my $dexterity;
 my $strength;
@@ -44,7 +46,7 @@ $luck = verifyinputstats();
 
 printstats();
 my @backpack= qw(frog dog smog);
-   
+
 print $clear_string;
 
 print "You wake up in the forest, your clothing is missing besides your underwear\n";
