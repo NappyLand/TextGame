@@ -27,7 +27,7 @@ sub verifyinputstats{
 	chomp($_ = <>);
 
 	while((/\D/)||$_ < 0 or $_ > $statRemaining){
-  print "You're out of range,Please enter a value between 0 and $statRemaining";
+  print "You're out of range,Please enter a value between 0 and $statRemaining:";
   chomp($_ = <>);
 
 	}
@@ -49,13 +49,15 @@ $luck = verifyinputstats();
 
 printstats();
 my @backpack= qw(frog dog smog);
+print "press a key to move forward\n";
+if(my $input = <>){
+	print $clear_string;
+}
 
-print $clear_string;
-
-print "You wake up in the forest, your clothing is missing besides your underwear\n";
-print "You have a backpack.\n";
-print "You can search by typing the word search followed by what it is you want to look at ex. search backpack\n";
-print "press enter to move forth";
+	print "You wake up in the forest, your clothing is missing besides your underwear\n";
+	print "You have a backpack.\n";
+	print "You can search by typing the word search followed by what it is you want to look at ex. search backpack\n";
+	print "press enter to move forth";
 
 sub searchcontainer{
 #for each element in the array you have passed to this sub, print each element
@@ -65,18 +67,22 @@ foreach (@_){
 }
 
 if(my $input = <>){
-print $clear_string;
+	print $clear_string;
 }
 my $setting= "The sun is setting the city is in the distance about 6KM away\n";
-print "$setting";
+	print "$setting";
+
 while (42){
-print "what do you do?\n>>";
+	print "what do you do?\n>>";
 chomp(my $input = <>);
-if ($input =~ /\Qsearch backpack\E/){
+			if ($input =~ /\Qsearch backpack\E/){
 
 	searchcontainer(@backpack)
 }
-if ($input =~/\Qclear\E/){
+			if ($input =~/\Qclear\E/){
 	print $clear_string;
+}
+			if ($input =~/exit|quit|stop|halt/ ){
+	print"\nsee you soon\n";exit
 }
 }
