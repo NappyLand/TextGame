@@ -1,5 +1,5 @@
 #!/bin/bash/perl -w
-#HBPv.0.0.1
+#HBPv.0.0.2
 
 use strict;
 #clears the screen to start the program
@@ -16,6 +16,8 @@ my $statRemaining = 10;
 my $dexterity;
 my $strength;
 my $luck;
+my $hp =10;
+my $mp =10;
 
 sub printstats{
 	print "INT=$intelligence,DEX=$dexterity,STR=$strength,LUK=$luck\n";
