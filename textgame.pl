@@ -7,9 +7,19 @@ my $clear_string = `clear`;
 print "$clear_string";
 #Asks the player about their stats :0
 
+use Term::ANSIColor;
+
+print color('bold white');
+print "Welcome to textgame!\n";
+sub Bgreen { print color ('bold green');
+}
+Bgreen ();
+sub Bred {print color ('bold red');
+}
+
 print "\nYou have 10 stat points to spend:\n";
 print "Use them wisely.\n";
-print "INT=0,DEX=0,STR=0,LUK=0\n";
+print "INT=0,DEX=0,";Bred (); print "STR=0,"; Bgreen(); print "LUK=0\n";
 #int, dex, str, luk, hp, mp
 my $intelligence;
 my $statRemaining = 10;
