@@ -11,15 +11,25 @@ use Term::ANSIColor;
 
 print color('bold white');
 print "Welcome to textgame!\n";
+
 sub Bgreen { print color ('bold green');
 }
 Bgreen ();
 sub Bred {print color ('bold red');
 }
-
+sub Bblue {
+print color ('bold blue');
+}
+sub Byellow {
+	print color ('bold yellow');
+}
 print "\nYou have 10 stat points to spend:\n";
 print "Use them wisely.\n";
-print "INT=0,DEX=0,";Bred (); print "STR=0,"; Bgreen(); print "LUK=0\n";
+Bblue();print"INT=0";
+Bgreen();print "DEX=0";
+Bred ();print "STR=0";
+Byellow();print "LUK=0\n";
+Bgreen();
 #int, dex, str, luk, hp, mp
 my $intelligence;
 my $statRemaining = 10;
