@@ -4,6 +4,7 @@
 use strict;
 #clears the screen to start the program
 my $clear_string = `clear`;
+#use clear.pm ;
 print "$clear_string";
 #Asks the player about their stats :0
 
@@ -41,6 +42,7 @@ my $mp =10;
 
 sub yes_no {
 	#"$_[0]prints out the prompt, eval evaluates the  arguments as perl"
+	# " x ","function",print 'z' ;
 	 print "$_[0]\n";
 	 chomp(my $input = <>);
 	if ($input =~ /y/i){
@@ -67,7 +69,11 @@ sub manual{
 	}
 
 sub printstats{
-	print "INT=$intelligence,DEX=$dexterity,STR=$strength,LUK=$luck\n";
+	Bblue();print"INT=$intelligence";
+	Bgreen();print "DEX=$dexterity";
+	Bred();print "STR=$strength";
+	Byellow();print "LUK=$luck\n";
+	Bgreen();
 	}
 
 
@@ -124,7 +130,7 @@ foreach (@_){
 if(my $input = <>){
 	print $clear_string;
 }
-my $setting= "The sun is setting a city is in the distance about 6KM away\n";
+my $setting= "The sun is setting, a city is in the distance about 6KM away\n";
 	print "$setting";
 
 #actionables
@@ -139,8 +145,17 @@ chomp(my $input = <>);
 			elsif ($input =~/man|manual|help/i){
 				manual()
 			}
+      elsif ($input =~/search/i){
+				print "$setting\n";
+			}
+			elsif ((substr $input,0,4) =~/read/i){
+			if ((substr $input, -4) =~ /.pdf/i) {print "literalstring";}
 
-			elsif ($input =~ /dance|dances/i){
+			}
+			elsif ($input =~/wonderful/i){
+				print "No...You're wonderful! :)\n";
+			}
+			elsif ($input =~/dance|dances/i){
 				print "You do a little dance, but ultimately nothing happens\n";
 			}
 
