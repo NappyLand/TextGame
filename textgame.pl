@@ -7,7 +7,6 @@ use My::Clear;
 use Term::ANSIColor;
 
 
-
 print color('bold white');
 print "Welcome to textgame!\n";
 
