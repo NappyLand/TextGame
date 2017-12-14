@@ -2,13 +2,11 @@
 #HBPv.0.0.2
 #this is to show the push
 use strict;
-#clears the screen to start the program
-my $clear_string = `clear`;
-#use clear.pm ;
-print "$clear_string";
-#Asks the player about their stats :0
 
+use My::Clear; 
 use Term::ANSIColor;
+
+
 
 print color('bold white');
 print "Welcome to textgame!\n";
@@ -24,6 +22,8 @@ print color ('bold blue');
 sub Byellow {
 	print color ('bold yellow');
 }
+
+#Asks the player about their stats :0
 print "\nYou have 10 stat points to spend:\n";
 print "Use them wisely.\n";
 Bblue();print"INT=0";
@@ -106,7 +106,7 @@ printstats();
 my @backpack= qw(the_good_word.pdf);
 print "press a key to move forward\n";
 if(my $input = <>){
-	print $clear_string;
+	clear();
 }
 
 	print "You wake up in a forest\n";
@@ -128,7 +128,7 @@ foreach (@_){
 }
 
 if(my $input = <>){
-	print $clear_string;
+	print clear();
 }
 my $setting= "The sun is setting, a city is in the distance about 6KM away\n";
 	print "$setting";
@@ -160,8 +160,8 @@ chomp(my $input = <>);
 			}
 
 			elsif ($input =~/\Qclear\E/i){
-
-	      print $clear_string;
+	clear() ;    
+ # print $clear_string;
       }
 			elsif ($input =~/exit|quit|stop|halt/i ){
 	      print"\nsee you soon\n";exit
