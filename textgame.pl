@@ -3,9 +3,10 @@
 #this is to show the push
 use strict;
 
-use My::Clear; 
+use My::Clear;
 use Term::ANSIColor;
-
+use My::Yes_no;
+use My::Manual;
 
 print color('bold white');
 print "Welcome to textgame!\n";
@@ -39,33 +40,9 @@ my $luck;
 my $hp =10;
 my $mp =10;
 
-sub yes_no {
-	#"$_[0]prints out the prompt, eval evaluates the  arguments as perl"
-	# " x ","function",print 'z' ;
-	 print "$_[0]\n";
-	 chomp(my $input = <>);
-	if ($input =~ /y/i){
-		eval $_[1]
-	}
-	if ($input =~ /n/i){
-		eval $_[2]
-	}
-}
 
-sub manual{
-	  printf"
-		clear:used to clear the screen
-		halt:used to exit
-		search:used for looking inside or around things
-		stop:used to exit
-		quit:used to exit
-		exit:used to exit
-		man:used to open the manual
-		manual: used to open the manual
-		help: used to open the manual
 
-	  the_good_word.pdf appears to be torn at the bottom\n";
-	}
+
 
 sub printstats{
 	Bblue();print"INT=$intelligence";
@@ -159,7 +136,7 @@ chomp(my $input = <>);
 			}
 
 			elsif ($input =~/\Qclear\E/i){
-	clear() ;    
+	clear() ;
  # print $clear_string;
       }
 			elsif ($input =~/exit|quit|stop|halt/i ){
