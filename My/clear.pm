@@ -8,5 +8,6 @@ our @EXPORT = qw(clear);
 
 sub clear{
 my $clear_strings = `clear`;
- print "$clear_strings"; }
+ print "$clear_strings";
+}
 1;

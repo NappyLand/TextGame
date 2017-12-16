@@ -8,6 +8,8 @@ use Term::ANSIColor;
 use My::Yes_no;
 use My::Manual;
 
+clear();
+
 print color('bold white');
 print "Welcome to textgame!\n";
 
@@ -104,7 +106,7 @@ foreach (@_){
 }
 
 if(my $input = <>){
-	print clear();
+	 clear();
 }
 my $setting= "The sun is setting, a city is in the distance about 6KM away\n";
 	print "$setting";
